@@ -59,11 +59,11 @@ const Navbar = () => {
         <div className="navbar-end">
           <Link
             to="/appoint"
-            class="group relative inline-block overflow-hidden border border-[#6a50b0] px-8 py-1 focus:outline-none focus:ring"
+            class="group relative inline-block overflow-hidden border border-primary px-8 py-1 focus:outline-none focus:ring"
           >
-            <span class="absolute inset-y-0 left-0 w-[2px] bg-[#6a50b0] transition-all group-hover:w-full group-active:bg-indigo-500"></span>
+            <span class="absolute inset-y-0 left-0 w-[2px] bg-primary transition-all group-hover:w-full group-active:bg-indigo-500"></span>
 
-            <span class="relative text-sm font-medium text-[#6a50b0] transition-colors group-hover:text-white">
+            <span class="relative text-sm font-medium text-primary transition-colors group-hover:text-white">
               Appointment
             </span>
           </Link>

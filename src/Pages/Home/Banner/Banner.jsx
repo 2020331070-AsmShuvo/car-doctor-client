@@ -10,7 +10,7 @@ import img6 from "../../../assets/images/banner/6.jpg";
 const Banner = () => {
   return (
     <div>
-      <div className="carousel w-full h-[600px]">
+      <div className="carousel w-full h-[580px]">
         <div id="slide1" className="carousel-item relative w-full">
           <img src={img1} className="w-full" />
           <div className="absolute h-full items-center bg-gradient-to-r from-[#151515] to-[rgba(21,21,21,0)]  flex flex-col left-0 top-0 gap-4">
@@ -25,7 +25,7 @@ const Banner = () => {
               <div className="flex flex-col md:flex-row gap-2">
                 <Link
                   to="/discover"
-                  class="group relative inline-flex items-center overflow-hidden rounded bg-indigo-600 px-8 py-3 text-white focus:outline-none focus:ring active:bg-indigo-500"
+                  class="group relative inline-flex items-center overflow-hidden rounded bg-primary px-8 py-3 text-white focus:outline-none focus:ring active:bg-primary"
                 >
                   <span class="absolute -start-full transition-all group-hover:start-4">
                     <svg
@@ -49,7 +49,7 @@ const Banner = () => {
                   </span>
                 </Link>
                 <Link
-                  class="group relative inline-flex items-center overflow-hidden rounded bg-indigo-600 px-8 py-3 text-white focus:outline-none focus:ring active:bg-indigo-500"
+                  class="group relative inline-flex items-center overflow-hidden rounded bg-primary px-8 py-3 text-white focus:outline-none focus:ring active:bg-primary"
                   to="/latest"
                 >
                   <span class="absolute -end-full transition-all group-hover:end-4">
@@ -100,7 +100,7 @@ const Banner = () => {
               <div className="flex flex-col md:flex-row gap-2">
                 <Link
                   to="/discover"
-                  class="group relative inline-flex items-center overflow-hidden rounded bg-indigo-600 px-8 py-3 text-white focus:outline-none focus:ring active:bg-indigo-500"
+                  class="group relative inline-flex items-center overflow-hidden rounded bg-primary px-8 py-3 text-white focus:outline-none focus:ring active:bg-primary"
                 >
                   <span class="absolute -start-full transition-all group-hover:start-4">
                     <svg
@@ -124,7 +124,7 @@ const Banner = () => {
                   </span>
                 </Link>
                 <Link
-                  class="group relative inline-flex items-center overflow-hidden rounded bg-indigo-600 px-8 py-3 text-white focus:outline-none focus:ring active:bg-indigo-500"
+                  class="group relative inline-flex items-center overflow-hidden rounded bg-primary px-8 py-3 text-white focus:outline-none focus:ring active:bg-primary"
                   to="/latest"
                 >
                   <span class="absolute -end-full transition-all group-hover:end-4">
@@ -175,7 +175,7 @@ const Banner = () => {
               <div className="flex flex-col md:flex-row gap-2">
                 <Link
                   to="/discover"
-                  class="group relative inline-flex items-center overflow-hidden rounded bg-indigo-600 px-8 py-3 text-white focus:outline-none focus:ring active:bg-indigo-500"
+                  class="group relative inline-flex items-center overflow-hidden rounded bg-primary px-8 py-3 text-white focus:outline-none focus:ring active:bg-primary"
                 >
                   <span class="absolute -start-full transition-all group-hover:start-4">
                     <svg
@@ -199,7 +199,7 @@ const Banner = () => {
                   </span>
                 </Link>
                 <Link
-                  class="group relative inline-flex items-center overflow-hidden rounded bg-indigo-600 px-8 py-3 text-white focus:outline-none focus:ring active:bg-indigo-500"
+                  class="group relative inline-flex items-center overflow-hidden rounded bg-primary px-8 py-3 text-white focus:outline-none focus:ring active:bg-primary"
                   to="/latest"
                 >
                   <span class="absolute -end-full transition-all group-hover:end-4">
@@ -250,7 +250,7 @@ const Banner = () => {
               <div className="flex flex-col md:flex-row gap-2">
                 <Link
                   to="/discover"
-                  class="group relative inline-flex items-center overflow-hidden rounded bg-indigo-600 px-8 py-3 text-white focus:outline-none focus:ring active:bg-indigo-500"
+                  class="group relative inline-flex items-center overflow-hidden rounded bg-primary px-8 py-3 text-white focus:outline-none focus:ring active:bg-primary"
                 >
                   <span class="absolute -start-full transition-all group-hover:start-4">
                     <svg
@@ -274,7 +274,7 @@ const Banner = () => {
                   </span>
                 </Link>
                 <Link
-                  class="group relative inline-flex items-center overflow-hidden rounded bg-indigo-600 px-8 py-3 text-white focus:outline-none focus:ring active:bg-indigo-500"
+                  class="group relative inline-flex items-center overflow-hidden rounded bg-primary px-8 py-3 text-white focus:outline-none focus:ring active:bg-primary"
                   to="/latest"
                 >
                   <span class="absolute -end-full transition-all group-hover:end-4">

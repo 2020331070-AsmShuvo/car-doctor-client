@@ -5,7 +5,7 @@ const Service = ({ service }) => {
   const { title, img, price } = service;
   return (
     <div className="mx-auto">
-      <div className="relative flex flex-col text-gray-700 bg-gradient-to-r from-[#FFF] to-[#6192e028] shadow-md bg-clip-border rounded-xl w-96">
+      <div className="relative flex flex-col text-gray-700 bg-gradient-to-r border from-[#FFF] to-[#6192e028]  bg-clip-border rounded-xl w-96">
         <div className="relative mt-4 mx-4 overflow-hidden text-gray-700  bg-clip-border rounded-xl">
           <img
             src={img}

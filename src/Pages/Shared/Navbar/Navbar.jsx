@@ -1,8 +1,18 @@
-import React from "react";
+import React, { useContext } from "react";
 import { Link, NavLink } from "react-router-dom";
 import logo from "../../../assets/logo.svg";
+import { AuthContext } from "../../../Providers/AuthProvider";
 
 const Navbar = () => {
+  const { user, logOut } = useContext(AuthContext);
+  console.log("in nav", user?.email);
+  const handleLogout = () => {
+    logOut()
+      .then()
+      .catch((err) => {
+        console.log(err.message);
+      });
+  };
   return (
     <div>
       <div className="navbar bg-base-100 ">
@@ -37,12 +47,31 @@ const Navbar = () => {
               <li>
                 <NavLink to="/about">About</NavLink>
               </li>
-              <li>
-                <NavLink to="/login">Login</NavLink>
-              </li>
-              <li>
-                <NavLink to="/Register">Register</NavLink>
-              </li>
+              {user?.email ? (
+                <>
+                  <li>
+                    <NavLink
+                      to="/"
+                      className="text-red-600"
+                      onClick={handleLogout}
+                    >
+                      Logout
+                    </NavLink>
+                  </li>
+                  <li>
+                    <NavLink to="/bookings">My Bookings</NavLink>
+                  </li>
+                </>
+              ) : (
+                <div className="flex">
+                  <li>
+                    <NavLink to="/login">Login</NavLink>
+                  </li>
+                  <li>
+                    <NavLink to="/Register">Register</NavLink>
+                  </li>
+                </div>
+              )}
             </ul>
           </div>
           <Link to="/">
@@ -60,12 +89,31 @@ const Navbar = () => {
             <li>
               <NavLink to="/about">About</NavLink>
             </li>
-            <li>
-              <NavLink to="/login">Login</NavLink>
-            </li>
-            <li>
-              <NavLink to="/Register">Register</NavLink>
-            </li>
+            {user?.email ? (
+              <>
+                <li>
+                  <NavLink
+                    to="/"
+                    className="text-red-600"
+                    onClick={handleLogout}
+                  >
+                    Logout
+                  </NavLink>
+                </li>
+                <li>
+                  <NavLink to="/bookings">My Bookings</NavLink>
+                </li>
+              </>
+            ) : (
+              <div className="flex">
+                <li>
+                  <NavLink to="/login">Login</NavLink>
+                </li>
+                <li>
+                  <NavLink to="/Register">Register</NavLink>
+                </li>
+              </div>
+            )}
           </ul>
         </div>
         <div className="navbar-end">

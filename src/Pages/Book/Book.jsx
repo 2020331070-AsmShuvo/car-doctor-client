@@ -1,8 +1,11 @@
 import axios from "axios";
-import React from "react";
+import React, { useContext } from "react";
 import { useLoaderData } from "react-router-dom";
+import { AuthContext } from "../../Providers/AuthProvider";
 const Book = () => {
+  const { user } = useContext(AuthContext);
   const service = useLoaderData();
+  
   const { title, _id, price, img } = service;
   const hanldeBook = (e) => {
     e.preventDefault();
@@ -23,10 +26,14 @@ const Book = () => {
       img,
       price,
     };
-    console.log(order);
+    // console.log(order);
 
     axios.post("http://localhost:5000/bookings", order).then((data) => {
       console.log("posted", data.data);
+      if (data.data.insertedId) {
+        alert("Service booked successfuly");
+        form.reset();
+      }
     });
   };
 
@@ -37,8 +44,8 @@ const Book = () => {
         <div>
           <main className="flex border-4 items-center justify-center px-8 py-8 sm:px-12 lg:col-span-7 lg:px-16 lg:py-12 xl:col-span-6">
             <div className="max-w-xl lg:max-w-3xl">
-              <h1 className="mt-6 text-2xl font-bold text-gray-900 sm:text-3xl md:text-4xl">
-                Book Your Service Now
+              <h1 className="mt-6 text-2xl border-b border-gray-500 pb-1 font-bold text-gray-900 sm:text-3xl md:text-4xl">
+                Book <span className="text-primary">{title}</span> Service Now:
               </h1>
 
               <form
@@ -90,6 +97,7 @@ const Book = () => {
                     type="email"
                     id="Email"
                     name="email"
+                    defaultValue={user?.email}
                     className="mt-1 w-full rounded-md border-gray-200 bg-gray-100 p-2 h-8 text-sm text-gray-700 shadow-sm"
                     required
                   />

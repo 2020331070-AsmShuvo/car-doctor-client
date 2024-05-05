@@ -1,9 +1,12 @@
 import React, { useContext } from "react";
 import loginPic from "../../assets/images/login/login.svg";
-import { Link } from "react-router-dom";
+import { Link, useLocation, useNavigate } from "react-router-dom";
 import AuthProvider, { AuthContext } from "../../Providers/AuthProvider";
 const Login = () => {
   const { signIn } = useContext(AuthContext);
+  const location = useLocation();
+  const nevigate = useNavigate();
+  console.log(location);
   const handleSubmit = (e) => {
     e.preventDefault();
     const form = e.target;
@@ -15,6 +18,7 @@ const Login = () => {
         console.log("Logged in :", res.user);
         alert("Login successful");
         form.reset();
+        nevigate(location?.state ? location?.state : "/");
       })
       .catch((err) => {
         console.log(err.message);
@@ -48,10 +52,7 @@ const Login = () => {
                 className="mt-8 border-primary rounded-xl p-20 border-4 flex flex-col gap-6"
               >
                 <div className="col-span-6">
-                  <label
-                    for="Email"
-                    className="block text-sm font-medium text-gray-700"
-                  >
+                  <label className="block text-sm font-medium text-gray-700">
                     {" "}
                     Email{" "}
                   </label>
@@ -65,10 +66,7 @@ const Login = () => {
                 </div>
 
                 <div className="col-span-6 sm:col-span-3">
-                  <label
-                    for="Password"
-                    className="block text-sm font-medium text-gray-700"
-                  >
+                  <label className="block text-sm font-medium text-gray-700">
                     {" "}
                     Password{" "}
                   </label>

@@ -91,14 +91,13 @@ const Navbar = () => {
             </li>
             {user?.email ? (
               <>
+                <li className="border-4 border-primary rounded-2xl flex items-center justify-center p-2">
+                  {user?.displayName}
+                </li>
                 <li>
-                  <NavLink
-                    to="/"
-                    className="text-red-600"
-                    onClick={handleLogout}
-                  >
+                  <button className="text-red-600" onClick={handleLogout}>
                     Logout
-                  </NavLink>
+                  </button>
                 </li>
                 <li>
                   <NavLink to="/bookings">My Bookings</NavLink>

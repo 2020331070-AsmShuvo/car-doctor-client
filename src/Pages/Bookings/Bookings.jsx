@@ -6,25 +6,26 @@ import BookingRow from "./BookingRow";
 const Bookings = () => {
   const { user } = useContext(AuthContext);
   const [bookings, setBookings] = useState([]);
-  const url = `http://localhost:5000/bookings?email=${user?.email}`;
+  const url = `http://localhost:3000/bookings?email=${user?.email}`;
   useEffect(() => {
-    axios.get(url).then((data) => {
+    axios.get(url, { withCredentials: true }).then((data) => {
+      //jwt 6
       setBookings(data.data);
       console.log(bookings);
-      console.log("In booking list", data.data);
+      // console.log("In booking list", data.data);
     });
-  }, []);
+  }, [url]);
 
   const handleDelete = (id) => {
     console.log("delete called");
     const proceed = confirm("Are you sure ?");
     if (proceed) {
-      fetch(`http://localhost:5000/bookings/${id}`, {
+      fetch(`http://localhost:3000/bookings/${id}`, {
         method: "DELETE",
       })
         .then((res) => res.json())
         .then((data) => {
-          console.log(data);
+          // console.log(data);
           if (data.deletedCount) {
             alert("Deleted Successsfull");
             const remaining = bookings.filter((booking) => booking._id != id);

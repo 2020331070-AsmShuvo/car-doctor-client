@@ -28,7 +28,7 @@ const Book = () => {
     };
     // console.log(order);
 
-    axios.post("http://localhost:5000/bookings", order).then((data) => {
+    axios.post("http://localhost:3000/bookings", order).then((data) => {
       console.log("posted", data.data);
       if (data.data.insertedId) {
         alert("Service booked successfuly");

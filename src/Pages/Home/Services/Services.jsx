@@ -5,7 +5,7 @@ import axios from "axios";
 const Services = () => {
   const [services, setServices] = useState([]);
   useEffect(() => {
-    // fetch("http://localhost:5000/services")
+    // fetch("http://localhost:3000/services")
     //   .then((res) => res.json())
     //   .then((data) => {
     //     console.log(data);
@@ -13,7 +13,7 @@ const Services = () => {
     //   });
     // axios
 
-    axios.get("http://localhost:5000/services").then((data) => {
+    axios.get("http://localhost:3000/services").then((data) => {
       console.log(data.data);
       setServices(data.data);
     });

@@ -1,9 +1,17 @@
 import React, { useContext } from "react";
 import { Link } from "react-router-dom";
 import { AuthContext } from "../../Providers/AuthProvider";
+import { updateProfile } from "firebase/auth";
 
 const Register = () => {
-  const { createUser } = useContext(AuthContext);
+  const { createUser, logOut } = useContext(AuthContext);
+  const handleLogout = () => {
+    logOut()
+      .then()
+      .catch((err) => {
+        console.log(err.message);
+      });
+  };
   const handleRegister = (e) => {
     e.preventDefault();
 
@@ -26,8 +34,18 @@ const Register = () => {
     createUser(email, password)
       .then((res) => {
         console.log("User registered with gmail and password: ", res.user);
-        alert("Register successfull");
-        form.reset();
+        const curUser = res.user;
+        updateProfile(curUser, {
+          displayName: fName,
+        })
+          .then(() => {
+            console.log("Created user", curUser);
+            alert("Registration Successfull");
+            handleLogout();
+          })
+          .catch((err) => {
+            console.log("Erro while registration", err.message);
+          });
       })
       .catch((err) => {
         console.log("Error in register: ", err.message);
